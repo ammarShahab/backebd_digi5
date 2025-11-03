@@ -24,7 +24,7 @@ class WebdevPortfolioController extends Controller
     {
         //
         $data=$request->validate([
-            'neme'=>'nullable|string',
+            'name'=>'nullable|string',
             'category'=>'nullable|string',
             'image'=>'nullable|string',
         ]);
