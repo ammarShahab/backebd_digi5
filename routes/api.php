@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\WebdevHeroController;
+use App\Http\Controllers\Api\WebdevPortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PricingPlanController;
 use App\Http\Controllers\Api\ExtraServiceController;
@@ -43,3 +44,10 @@ Route::post('/webdev-hero', [WebdevHeroController::class, 'store']);
 Route::get('/webdev-hero/{id}', [WebdevHeroController::class, 'show']);
 Route::put('/webdev-hero/{id}', [WebdevHeroController::class, 'update']);
 Route::delete('/webdev-hero/{id}', [WebdevHeroController::class, 'destroy']);
+
+// WebdevPortfolios Routes
+Route::get('/webdev-portfolios', [WebdevPortfolioController::class, 'index']);
+Route::post('/webdev-portfolios', [WebdevPortfolioController::class, 'store']);
+Route::get('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'shpw']);
+Route::put('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'update']);
+Route::delete('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'destroy']);

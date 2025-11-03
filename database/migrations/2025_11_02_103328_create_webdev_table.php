@@ -20,6 +20,14 @@ return new class extends Migration
             $table->string('cta2')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('webdev_portfolios', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->text('category')->nullable();
+            $table->string('image')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,6 +36,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('webdev_heroes');
+        Schema::dropIfExists('webdev_portfolios');
 
     }
 };
