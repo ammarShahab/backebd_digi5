@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\WebdevHeroController;
+use App\Http\Controllers\Api\WebdevPackageController;
 use App\Http\Controllers\Api\WebdevPortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PricingPlanController;
@@ -48,6 +49,13 @@ Route::delete('/webdev-hero/{id}', [WebdevHeroController::class, 'destroy']);
 // WebdevPortfolios Routes
 Route::get('/webdev-portfolios', [WebdevPortfolioController::class, 'index']);
 Route::post('/webdev-portfolios', [WebdevPortfolioController::class, 'store']);
-Route::get('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'shpw']);
+Route::get('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'show']);
 Route::put('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'update']);
 Route::delete('/webdev-portfolios/{id}', [WebdevPortfolioController::class, 'destroy']);
+
+// WebdevPackage Routes
+Route::get('/webdev-packages', [WebdevPackageController::class, 'index']);
+Route::post('/webdev-packages', [WebdevPackageController::class,'store']);
+Route::get('/webdev-packages/{id}',[WebdevPackageController::class, 'show']);
+Route::put('/webdev-packages/{id}', [WebdevPackageController::class, 'update']);
+Route::delete('/webdev-packages/{id}',[WebdevPackageController::class, 'destroy']);
