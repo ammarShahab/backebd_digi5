@@ -25,7 +25,7 @@ class WebdevPackageController extends Controller
         //
         $data = $request->validate([
             'name'=>'nullable|string',
-            'price'=>'nullable|numeric',
+            'price'=>'required|numeric|min:0',
             'duration'=>'nullable|string',
             'popular'=>'nullable|boolean',
             'features'=>'nullable|array',   
@@ -63,16 +63,16 @@ class WebdevPackageController extends Controller
         }
         $data = $request->validate([
             'name'=>'nullable|string',
-            'price'=>'nullable|numeric',
+            'price'=>'nullable|numeric|string',
             'duration'=>'nullable|string',
             'popular'=>'nullable|boolean',
             'features'=>'nullable|array',   
             'span' =>'nullable|integer',
         ]);
 
-        if (isset($data['features'])) {
+       /*  if (isset($data['features'])) {
             $data['features']=json_encode($data['features']);
-        }
+        } */
         $webdevPackages->update($data);
         return response()->json($webdevPackages);
     }

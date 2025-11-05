@@ -12,4 +12,5 @@ class WebdevPackages extends Model
     'features' => 'array',
     'popular' => 'boolean',
 ];
+
 }
