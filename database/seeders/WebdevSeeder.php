@@ -69,41 +69,27 @@ class WebdevSeeder extends Seeder
 
        ]);
 
+       DB::table('webdev_portfolios')->insert([
+        [
+            'name'=> 'রেস্টুরেন্ট ওয়েবসাইট',
+            'category'=> 'খাদ্য ও পানীয়',
+            'image'=> 'https://i.ibb.co.com/xtzg3wg3/pexels-shkrabaanthony-5588983-1.jpg'
 
+        ],
+        [
+            'name'=> 'শিক্ষা প্রতিষ্ঠান',
+            'category'=> 'শিক্ষা',
+            'image'=> 'https://i.ibb.co.com/HL4YSLT5/How-Term-Life-Supports-Mortgage-Protection.jpg'
 
-        // packages data
-        /* $packages = [
-            [
-                'name' => 'বেসিক',
-                'price' => 5000,
-                'duration' => 'মাস',
-                'popular' => false,
-                'features' => ['৫ পেজ', 'রেসপন্সিভ ডিজাইন', 'বেসিক এসইও'],
-                'span' => null,
-            ],
-            [
-                'name' => 'স্ট্যান্ডার্ড',
-                'price' => 10000,
-                'duration' => 'মাস',
-                'popular' => true,
-                'features' => ['১০ পেজ', 'রেসপন্সিভ ডিজাইন', 'অ্যাডভান্স এসইও', 'কন্টাক্ট ফর্ম'],
-                'span' => null,
-            ],
-            [
-                'name' => 'প্রিমিয়াম',
-                'price' => 20000,
-                'duration' => 'মাস',
-                'popular' => false,
-                'features' => ['আনলিমিটেড পেজ', 'কাস্টম ডিজাইন', 'প্রিমিয়াম এসইও', 'ই-কমার্স'],
-                'span' => 2,
-            ],
-        ];
+        ],
+        [
+            'name'=> 'রিয়েল এস্টেট',
+            'category'=> 'সম্পত্তি',
+            'image'=> 'https://i.ibb.co.com/d0SSFcCz/amazing-dining-under.jpg'
 
-        foreach ($packages as $package) {
-            WebdevPackages::firstOrCreate(
-                ['name' => $package['name']], // condition for uniqueness
-                $package // the rest of the data to insert if not found
-            );
-        } */
+        ]
+
+       ]);
+       
     }
 }
