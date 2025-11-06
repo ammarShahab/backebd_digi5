@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\DomainHostHeroController;
 use App\Http\Controllers\Api\WebdevHeroController;
 use App\Http\Controllers\Api\WebdevPackageController;
 use App\Http\Controllers\Api\WebdevPortfolioController;
@@ -59,3 +60,11 @@ Route::post('/webdev-packages', [WebdevPackageController::class,'store']);
 Route::get('/webdev-packages/{id}',[WebdevPackageController::class, 'show']);
 Route::put('/webdev-packages/{id}', [WebdevPackageController::class, 'update']);
 Route::delete('/webdev-packages/{id}',[WebdevPackageController::class, 'destroy']);
+
+// Domain Hosting Hero Routes
+
+Route::get('/domain-host-hero', [DomainHostHeroController::class, 'index']);
+Route::post('/domain-host-hero', [DomainHostHeroController::class, 'store']);
+Route::get('/domain-host-hero/{id}', [DomainHostHeroController::class, 'show']);
+Route::put('/domain-host-hero/{id}', [DomainHostHeroController::class, 'update']);
+Route::delete('/domain-host-hero/{id}', [DomainHostHeroController::class, 'destroy']);
