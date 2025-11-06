@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             PricingSeeder::class,
             WebdevSeeder::class,
+            DomainHostSeeder::class
         ]);
 
         User::factory()->create([
