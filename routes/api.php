@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\DomainHostHeroController;
+use App\Http\Controllers\Api\DomainHostPackageController;
 use App\Http\Controllers\Api\WebdevHeroController;
 use App\Http\Controllers\Api\WebdevPackageController;
 use App\Http\Controllers\Api\WebdevPortfolioController;
@@ -62,9 +63,15 @@ Route::put('/webdev-packages/{id}', [WebdevPackageController::class, 'update']);
 Route::delete('/webdev-packages/{id}',[WebdevPackageController::class, 'destroy']);
 
 // Domain Hosting Hero Routes
-
 Route::get('/domain-host-hero', [DomainHostHeroController::class, 'index']);
 Route::post('/domain-host-hero', [DomainHostHeroController::class, 'store']);
 Route::get('/domain-host-hero/{id}', [DomainHostHeroController::class, 'show']);
 Route::put('/domain-host-hero/{id}', [DomainHostHeroController::class, 'update']);
 Route::delete('/domain-host-hero/{id}', [DomainHostHeroController::class, 'destroy']);
+
+// Domain Hosting Package Routes
+Route::get('/domain-host-packages', [DomainHostPackageController::class, 'index']);
+Route::post('/domain-host-packages', [DomainHostPackageController::class,'store']);
+Route::get('/domain-host-packages/{id}',[DomainHostPackageController::class, 'show']);
+Route::put('/domain-host-packages/{id}', [DomainHostPackageController::class, 'update']);
+Route::delete('/domain-host-packages/{id}',[DomainHostPackageController::class, 'destroy']);
