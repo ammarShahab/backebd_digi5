@@ -36,32 +36,32 @@ class DomainHostSeeder extends Seeder
             [
                 'title' => 'ডোমেইন রেজিস্ট্রেশন',
                 'description' => 'আপনার ব্যবসার জন্য পছন্দের ডোমেইন নাম সহজে রেজিস্টার করুন।',
-                'icon' => 'domainIcon2',
+                'icon' => 'domainIcon_2',
             ],
             [
                 'title' => 'ফাস্ট SSD হোস্টিং',
                 'description' => 'SSD সার্ভারে দ্রুত ও নির্ভরযোগ্য ওয়েবসাইট পারফরম্যান্স।',
-                'icon' => 'ssdIcon2',
+                'icon' => 'ssdIcon_2',
             ],
             [
                 'title' => 'ফ্রি SSL সার্টিফিকেট',
                 'description' => 'আপনার ওয়েবসাইটকে সুরক্ষিত রাখতে SSL সম্পূর্ণ ফ্রি।',
-                'icon' => 'sslIcon2',
+                'icon' => 'sslIcon_2',
             ],
             [
                 'title' => '৯৯.৯% আপটাইম গ্যারান্টি',
                 'description' => 'আপনার ওয়েবসাইট সবসময় অনলাইনে থাকবে – গ্যারান্টিযুক্ত।',
-                'icon' => 'upIcon2',
+                'icon' => 'upIcon_2',
             ],
             [
                 'title' => 'ইজি কন্ট্রোল প্যানেল',
                 'description' => 'cPanel এর মাধ্যমে সহজে ফাইল, ইমেইল ও ডাটাবেস ম্যানেজ করুন।',
-                'icon' => 'cpanelIcon2',
+                'icon' => 'cpanelIcon_2',
             ],
             [
                 'title' => '২৪/৭ কাস্টমার সাপোর্ট',
                 'description' => 'লাইভ চ্যাট ও কল সাপোর্ট দিয়ে সর্বদা পাশে আছি।',
-                'icon' => 'supportIcon2',
+                'icon' => 'supportIcon_2',
             ],
            
 
