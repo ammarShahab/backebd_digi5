@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\DomainHostFeatureController;
 use App\Http\Controllers\Api\DomainHostFeatureTitleDescController;
 use App\Http\Controllers\Api\DomainHostHeroController;
 use App\Http\Controllers\Api\DomainHostPackageController;
@@ -73,9 +74,17 @@ Route::delete('/domain-host-hero/{id}', [DomainHostHeroController::class, 'destr
 // Domain Hosting Service Feature Title Desc Routes
 Route::get('/domain-host-features-titledesc', [DomainHostFeatureTitleDescController::class, 'index']);
 Route::post('/domain-host-features-titledesc', [DomainHostFeatureTitleDescController::class, 'store']);
-Route::get('/domain-host-packages/{id}',[DomainHostFeatureTitleDescController::class, 'show']);
+Route::get('/domain-host-features-titledesc/{id}',[DomainHostFeatureTitleDescController::class, 'show']);
 Route::put('/domain-host-features-titledesc/{id}', [DomainHostFeatureTitleDescController::class, 'update']);
 Route::delete('/domain-host-features-titledesc/{id}', [DomainHostFeatureTitleDescController::class, 'destroy']);
+
+
+// Domain Hosting Service Feature Routes
+Route::get('/domain-host-features', [DomainHostFeatureController::class, 'index']);
+Route::post('/domain-host-features', [DomainHostFeatureController::class, 'store']);
+Route::get('/domain-host-features/{id}',[DomainHostFeatureController::class, 'show']);
+Route::put('/domain-host-features/{id}', [DomainHostFeatureController::class, 'update']);
+Route::delete('/domain-host-features/{id}', [DomainHostFeatureController::class, 'destroy']);
 
 
 // Domain Hosting Package Routes

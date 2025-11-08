@@ -10,6 +10,7 @@ class DomainHostFeatures extends Model
     //
     use HasFactory;
 
+    protected $table = 'domain_host_features';
     protected $fillable = [
         'title',
         'description',
