@@ -48,7 +48,7 @@ return new class extends Migration
     {
         Schema::dropIfExists('webdev_heroes');
         Schema::dropIfExists('webdev_portfolios');
-          Schema::dropIfExists('wevdev_packages');
+        Schema::dropIfExists('wevdev_packages');
 
     }
 };
