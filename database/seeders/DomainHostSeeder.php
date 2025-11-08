@@ -23,6 +23,13 @@ class DomainHostSeeder extends Seeder
             'cta2' => 'পোর্টফোলিও দেখুন →', */
         ]);
 
+
+        DB::table('domain_host_features_title_desc')->insert([
+            'title' => 'সার্ভিস ফিচার',
+            'description' => 'আপনার ওয়েবসাইটের ভিত্তি তৈরি করুন আমাদের নির্ভরযোগ্য ডোমেইন ও হোস্টিং সার্ভিসের মাধ্যমে।',
+            
+        ]);
+
          // packages data
         DB::table('domain_host_packages')->insert([
 
@@ -66,5 +73,8 @@ class DomainHostSeeder extends Seeder
             ],
 
        ]);
+
+
+
     }
 }
