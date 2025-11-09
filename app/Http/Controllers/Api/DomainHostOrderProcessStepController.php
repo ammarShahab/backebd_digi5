@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\DomainHostOrderProcessStep;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class DomainHostOrderProcessStepController extends Controller
 {
@@ -17,15 +18,18 @@ class DomainHostOrderProcessStepController extends Controller
 
     public function store(Request $request): JsonResponse
     {
+        Log::info('Store request received', $request->all());
+        
         $validated = $request->validate([
             'step' => 'required|string|max:10',
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'order' => 'required|integer',
-            'is_active' => 'boolean'
         ]);
 
         $step = DomainHostOrderProcessStep::create($validated);
+        
+        Log::info('Step created successfully', $step->toArray());
 
         return response()->json([
             'message' => 'ধাপ সফলভাবে যোগ করা হয়েছে',
@@ -33,32 +37,43 @@ class DomainHostOrderProcessStepController extends Controller
         ], 201);
     }
 
-    public function show(DomainHostOrderProcessStep $orderProcessStep): JsonResponse
+    public function show($id): JsonResponse
     {
-        return response()->json($orderProcessStep);
+        $step = DomainHostOrderProcessStep::findOrFail($id);
+        return response()->json($step);
     }
 
-    public function update(Request $request, DomainHostOrderProcessStep $orderProcessStep): JsonResponse
+    public function update(Request $request, $id): JsonResponse
     {
+        Log::info('Update request for ID: ' . $id, $request->all());
+        
+        $step = DomainHostOrderProcessStep::findOrFail($id);
+
         $validated = $request->validate([
             'step' => 'sometimes|string|max:10',
             'title' => 'sometimes|string|max:255',
             'description' => 'sometimes|string',
             'order' => 'sometimes|integer',
-            'is_active' => 'boolean'
         ]);
 
-        $orderProcessStep->update($validated);
+        $step->update($validated);
+        
+        Log::info('Step updated successfully', $step->toArray());
 
         return response()->json([
             'message' => 'ধাপ সফলভাবে আপডেট করা হয়েছে',
-            'data' => $orderProcessStep
+            'data' => $step
         ]);
     }
 
-    public function destroy(DomainHostOrderProcessStep $orderProcessStep): JsonResponse
+    public function destroy($id): JsonResponse
     {
-        $orderProcessStep->delete();
+        Log::info('Delete request for ID: ' . $id);
+        
+        $step = DomainHostOrderProcessStep::findOrFail($id);
+        $step->delete();
+        
+        Log::info('Step deleted successfully', ['id' => $id]);
 
         return response()->json([
             'message' => 'ধাপ সফলভাবে মুছে ফেলা হয়েছে'
