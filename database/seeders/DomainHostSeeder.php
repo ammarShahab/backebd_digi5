@@ -67,6 +67,37 @@ class DomainHostSeeder extends Seeder
 
        ]);
 
+       DB::table('domain_host_order_process_step')->insert([
+            [
+                'step' => '১',
+                'title' => 'ডোমেইন সার্চ করুন',
+                'description' => 'পছন্দের নামটি সার্চ করে ডোমেইন উপলভ্য কিনা দেখুন।',
+                'order' => 1,
+                'is_active' => true
+            ],
+            [
+                'step' => '২',
+                'title' => 'প্যাকেজ নির্বাচন করুন',
+                'description' => 'আপনার প্রয়োজন অনুযায়ী হোস্টিং প্যাকেজ বেছে নিন।',
+                'order' => 2,
+                'is_active' => true
+            ],
+            [
+                'step' => '৩',
+                'title' => 'পেমেন্ট সম্পন্ন করুন',
+                'description' => 'নিরাপদ পেমেন্ট সিস্টেমের মাধ্যমে অর্ডার কনফার্ম করুন।',
+                'order' => 3,
+                'is_active' => true
+            ],
+            [
+                'step' => '৪',
+                'title' => 'ওয়েবসাইট লাইভ করুন',
+                'description' => 'ডোমেইন ও হোস্টিং কানেক্ট করে আপনার সাইট চালু করুন।',
+                'order' => 4,
+                'is_active' => true
+            ],
+        ]);
+
          // packages data
         DB::table('domain_host_packages')->insert([
 

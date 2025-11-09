@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\DomainHostFeatureController;
 use App\Http\Controllers\Api\DomainHostFeatureTitleDescController;
 use App\Http\Controllers\Api\DomainHostHeroController;
+use App\Http\Controllers\Api\DomainHostOrderProcessStepController;
 use App\Http\Controllers\Api\DomainHostPackageController;
 use App\Http\Controllers\Api\WebdevHeroController;
 use App\Http\Controllers\Api\WebdevPackageController;
@@ -85,6 +86,13 @@ Route::post('/domain-host-features', [DomainHostFeatureController::class, 'store
 Route::get('/domain-host-features/{id}',[DomainHostFeatureController::class, 'show']);
 Route::put('/domain-host-features/{id}', [DomainHostFeatureController::class, 'update']);
 Route::delete('/domain-host-features/{id}', [DomainHostFeatureController::class, 'destroy']);
+
+// Domain Hosting Order Process Step Routes
+Route::get('/domain-host-order-process', [DomainHostOrderProcessStepController::class, 'index']);
+Route::post('/domain-host-order-process', [DomainHostOrderProcessStepController::class,'store']);
+Route::get('/domain-host-order-process/{id}',[DomainHostOrderProcessStepController::class, 'show']);
+Route::put('/domain-host-order-process/{id}', [DomainHostOrderProcessStepController::class, 'update']);
+Route::delete('/domain-host-order-process/{id}',[DomainHostOrderProcessStepController::class, 'destroy']);
 
 
 // Domain Hosting Package Routes
